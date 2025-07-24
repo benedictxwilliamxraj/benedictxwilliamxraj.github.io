@@ -86,26 +86,41 @@ class About extends React.Component {
       ],
       about_me: [
         {
-          id: "first-p-about",
-          content:
-            "I work with data.But more than that I make data actually useful"
-        },
-        {
-          id: "second-p-about",
-          content:
-            "A few years back, I was just another engineer at a desk. Writing ETL pipelines. Debugging broken joins. Fixing the same “missing null handling” bug for the tenth time."
-        },
-        {
-          id: "third-p-about",
-          content:
-            "It wasn’t glamorous. But it taught me a lot."
-        },
-        {
-          id: "fourth-p-about",
-          content:
-            "I completed Business Analytics at the UB to get an idea of business data. I’ve got 3+ years of experience as a Data Engineer. And I’ve built stuff that runs in the cloud, crunches millions of rows, and <em>helps real people make better decisions</em>"
+          id: "combined-about",
+          content: `
+            <p>I work with data.<br>But more than that—I make data <em>actually useful</em>.</p>
+
+            <p>A few years back, I was just another engineer at a desk. Writing ETL pipelines. Debugging broken joins. Fixing the same “missing null handling” bug for the tenth time.</p>
+
+            <p>It wasn’t glamorous. But it taught me a lot.</p>
+
+            <p><strong>Now?</strong><br>
+            I study Business Analytics at the University at Buffalo. I’ve got 3+ years of experience as a Data Engineer. And I’ve built stuff that runs in the cloud, crunches millions of rows, and <em>helps real people make better decisions</em>.</p>
+
+            <h5>Here’s what I usually do:</h5>
+            <ul>
+              <li>Pull messy data from weird places</li>
+              <li>Clean it, map it, and give it structure</li>
+              <li>Build models (like star schema or OBT) that actually make sense</li>
+              <li>Run <strong>quality checks</strong>—nulls, types, duplicates, business rules, you name it</li>
+              <li>Track 15+ KPIs—profitability, growth, risk, the whole works</li>
+              <li>Wrap it all in dashboards that <em>don’t</em> make your eyes hurt</li>
+            </ul>
+
+            <p>At Go Digital and LTIMindtree, I worked on Oracle, Snowflake, Databricks, ADF, Airflow—you name it.<br>
+            At CTBK, I used Python and linear programming to help forecast staffing and costs.</p>
+
+            <p>I care about <em>naming things well</em>, <em>avoiding duplicates</em>, and <em>keeping pipelines simple</em>.<br>
+            I also believe that <strong>good data is boring</strong>—because boring data means nothing breaks.</p>
+
+            <p>Some nights, I compete in coding contests. Other nights, I break and rebuild dashboards just for fun.</p>
+
+            <p><strong>If you ask me what I enjoy most?</strong><br>
+            It’s this: taking a mess of numbers… and turning it into something people can actually use.</p>
+          `
         }
       ]
+
     };
   }
 
@@ -154,9 +169,7 @@ class About extends React.Component {
                         <h5 className="title-left">About Me</h5>
                       </div>
                       {this.state.about_me.map(content => (
-                        <p className="lead" key={content.id}>
-                          {content.content}
-                        </p>
+                        <div key={content.id} className="lead" dangerouslySetInnerHTML={{ __html: content.content }} />
                       ))}
                     </div>
                   </div>
