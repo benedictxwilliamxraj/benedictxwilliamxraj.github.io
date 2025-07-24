@@ -25,7 +25,7 @@ class Portfolio extends React.Component {
   openModal = (title, category, description, startDate, endDate ) => {
     this.setState({
       showModal: true,
-      modalData: { title, category, description, startDate, endDate  }
+      modalData: { title, category, description, startDate, endDate }
     });
   };
 
@@ -33,7 +33,7 @@ class Portfolio extends React.Component {
     this.setState({ showModal: false });
   };
 
-  renderExperienceBox(image, title, category, description, index) {
+  renderExperienceBox(image, title, category, description,startDate, endDate, index) {
     return (
       <div className="col-md-4 mb-4" key={index}>
         <div className="work-box" onClick={() => this.openModal(title, category, description, startDate, endDate)} style={{ cursor: "pointer" }}>
