@@ -1,6 +1,4 @@
 import React from "react";
-
-// Import stock images
 import stock from "../img/LTIMindtree.jpg";
 import stock1 from "../img/godigitaltc_logo.jpeg";
 import stock2 from "../img/ctbk.png";
@@ -8,20 +6,36 @@ import stock3 from "../img/tifr.png";
 import stock4 from "../img/kanalytics.jpeg";
 
 class Portfolio extends React.Component {
-  renderExperienceBox(image, title, category, description) {
+  constructor() {
+    super();
+    this.state = {
+      showModal: false,
+      modalData: {}
+    };
+  }
+
+  openModal = (title, category, description) => {
+    this.setState({
+      showModal: true,
+      modalData: { title, category, description }
+    });
+  };
+
+  closeModal = () => {
+    this.setState({ showModal: false });
+  };
+
+  renderExperienceBox(image, title, category, description, index) {
     return (
-      <div className="col-md-4 mb-4">
-        <div className="work-box">
+      <div className="col-md-4 mb-4" key={index}>
+        <div className="work-box" onClick={() => this.openModal(title, category, description)} style={{ cursor: "pointer" }}>
           <div className="work-img">
             <img src={image} alt={title} className="img-fluid" />
           </div>
-          <div className="work-content">
+          <div className="work-content text-center">
             <h2 className="w-title">{title}</h2>
             <div className="w-more">
               <span className="w-ctegory">{category}</span>
-            </div>
-            <div className="work-description mt-2">
-              <p>{description}</p>
             </div>
           </div>
         </div>
@@ -58,6 +72,24 @@ class Portfolio extends React.Component {
     );
   }
 
+  renderModal() {
+    const { showModal, modalData } = this.state;
+    if (!showModal) return null;
+
+    return (
+      <div className="modal-overlay">
+        <div className="modal-content">
+          <h4>{modalData.title}</h4>
+          <p><strong>Stack:</strong> {modalData.category}</p>
+          <p>{modalData.description}</p>
+          <button className="btn btn-secondary mt-3" onClick={this.closeModal}>
+            Close
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     return (
       <section id="work" className="portfolio-mf sect-pt4 route">
@@ -74,64 +106,57 @@ class Portfolio extends React.Component {
             </div>
           </div>
 
-          {/* Work Experience Section */}
+          {/* Work Experience */}
           <h4 className="text-center mb-4">Work Experience</h4>
           <div className="row">
             {this.renderExperienceBox(
               stock,
               "Data Engineer - LTIMindtree",
               "ELT/ETL, Snowflake, ADF, Airflow, Qlik",
-              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards."
+              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.",
+              0
             )}
             {this.renderExperienceBox(
               stock1,
               "Engineer - Go Digital",
               "Oracle Fusion, Snowflake, Data Modeling",
-              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards."
+              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.",
+              1
             )}
             {this.renderExperienceBox(
               stock2,
               "Project Intern - CTBK",
               "Python, Linear Programming",
-              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler."
+              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.",
+              2
             )}
             {this.renderExperienceBox(
               stock3,
               "Research Intern - TIFR",
               "Python, OpenCV, Threading",
-              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms."
+              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.",
+              3
             )}
             {this.renderExperienceBox(
               stock4,
               "Data Intern - Kanalytics",
               "Python, PHP, Data Collection",
-              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs."
+              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.",
+              4
             )}
           </div>
 
-          {/* Projects Section */}
+          {/* Projects */}
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
-            {this.renderProjectBox(
-              stock4,
-              "Financial KPI Dashboard",
-              "Power BI, Compustat, CRSP",
-              "gallery-kpi"
-            )}
-            {this.renderProjectBox(
-              stock4,
-              "SEC Stock Analysis",
-              "SEC API, yFinance, Oracle Cloud",
-              "gallery-sec"
-            )}
-            {this.renderProjectBox(
-              stock1,
-              "Ping Pong Game",
-              "Python, Pygame, Score Tracker",
-              "gallery-game"
-            )}
+            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "gallery-kpi")}
+            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "gallery-sec")}
+            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "gallery-game")}
           </div>
         </div>
+
+        {/* Modal */}
+        {this.renderModal()}
       </section>
     );
   }
