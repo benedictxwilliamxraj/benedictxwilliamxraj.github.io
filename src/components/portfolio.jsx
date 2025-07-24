@@ -108,7 +108,7 @@ class Portfolio extends React.Component {
           <div className="row">
             {this.renderExperienceBox(stock, "Data Engineer - LTIMindtree", "ELT/ETL, Snowflake, ADF, Airflow, Qlik", "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.", 0)}
             {this.renderExperienceBox(stock1, "Data Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.", 1)}
-            {this.renderExperienceBox(stock2, "Project Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.", 2)}
+            {this.renderExperienceBox(stock2, "Data Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.", 2)}
             {this.renderExperienceBox(stock3, "Research Intern - TIFR", "Python, OpenCV, Threading", "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.", 3)}
             {this.renderExperienceBox(stock4, "Data Intern - Kanalytics", "Python, PHP, Data Collection", "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.", 4)}
           </div>
@@ -117,7 +117,7 @@ class Portfolio extends React.Component {
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
             {this.renderProjectBox(sec_analysis, "SEC Stock Analysis", "Power BI, Oracle, Data Modeling, ETL/ELT, Docker", "https://github.com/benedictxwilliamxraj/ETE_Fin_Sector_Company_LevelAnalysis")}
-            {this.renderProjectBox(emp_demand, "Employee Demand Planning", "Python, Streamlit, sklearn", "https://github.com/yourusername/sec-analysis")}
+            {this.renderProjectBox(emp_demand, "Employee Demand Planning", "Python, Streamlit, sklearn", "https://github.com/benedictxwilliamxraj/StaffForecasting")}
             {this.renderProjectBox(localrag, "Local RAG", "Python, LLM's, Vector Database", "https://github.com/benedictxwilliamxraj/Local-RAG")}
             {this.renderProjectBox(aiss, "AI Surveliance System", "Python, OpenCV, NodeJS", "https://github.com/benedictxwilliamxraj/Survelliance_Pyqt5")}
             {this.renderProjectBox(facesimi, "Face Similarity Search", "Python, OpenCV, PHP", "https://github.com/benedictxwilliamxraj/Face_recognition")}
