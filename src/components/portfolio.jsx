@@ -1,21 +1,60 @@
 import React from "react";
 
 // Import stock images
-import stock from "../img/image1.jpg";
-import stock1 from "../img/image2.jpg";
-import stock2 from "../img/image3.jpg";
-import stock3 from "../img/image4.jpg";
-import stock4 from "../img/image5.jpg";
-import stock5 from "../img/image6.jpg";
+import stock from "../img/LTIMindtree.jpg";
+import stock1 from "../img/godigitaltc_logo.jpeg";
+import stock2 from "../img/ctbk.png";
+import stock3 from "../img/tifr.png";
+import stock4 from "../img/kanalytics.jpeg";
+import stock5 from "../img/image6.jpg"; // optional placeholder for projects
 
 class Portfolio extends React.Component {
-  renderBox(image, title, category, galleryId = "gallery-mf") {
+  constructor() {
+    super();
+    this.state = {
+      expanded: null // To toggle work experience descriptions
+    };
+  }
+
+  handleToggle = (index) => {
+    this.setState({ expanded: this.state.expanded === index ? null : index });
+  };
+
+  renderExperienceBox(image, title, category, description, index) {
+    const isOpen = this.state.expanded === index;
     return (
-      <div className="col-md-4">
+      <div className="col-md-4 mb-4" key={index}>
+        <div className="work-box">
+          <div
+            className="work-img"
+            style={{ cursor: "pointer" }}
+            onClick={() => this.handleToggle(index)}
+          >
+            <img src={image} alt={title} className="img-fluid" />
+          </div>
+          <div className="work-content">
+            <h2 className="w-title">{title}</h2>
+            <div className="w-more">
+              <span className="w-ctegory">{category}</span>
+            </div>
+            {isOpen && (
+              <div className="work-description mt-2">
+                <p>{description}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  renderProjectBox(image, title, category, galleryId = "gallery-mf") {
+    return (
+      <div className="col-md-4 mb-4" key={title}>
         <div className="work-box">
           <a href={image} data-lightbox={galleryId}>
             <div className="work-img">
-              <img src={image} alt="" className="img-fluid" />
+              <img src={image} alt={title} className="img-fluid" />
             </div>
             <div className="work-content">
               <div className="row">
@@ -57,17 +96,64 @@ class Portfolio extends React.Component {
           {/* Work Experience Section */}
           <h4 className="text-center mb-4">Work Experience</h4>
           <div className="row">
-            {this.renderBox(stock, "Data Engineer - LTIMindtree", "Oracle, Snowflake, ADF, Airflow", "gallery-ltim")}
-            {this.renderBox(stock2, "Engineer - Go Digital", "ETL, Star Schema, Merge Logic", "gallery-godigital")}
-            {this.renderBox(stock3, "Project Intern - CTBK", "Python, Linear Programming, Forecasting", "gallery-ctbk")}
+            {this.renderExperienceBox(
+              stock,
+              "Data Engineer - LTIMindtree",
+              "ELT/ETL, Snowflake, ADF, Airflow, Qlik",
+              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.",
+              0
+            )}
+            {this.renderExperienceBox(
+              stock1,
+              "Engineer - Go Digital",
+              "Oracle Fusion, Snowflake, Data Modeling",
+              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.",
+              1
+            )}
+            {this.renderExperienceBox(
+              stock2,
+              "Project Intern - CTBK",
+              "Python, Linear Programming",
+              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.",
+              2
+            )}
+            {this.renderExperienceBox(
+              stock3,
+              "Research Intern - TIFR",
+              "Python, OpenCV, Threading",
+              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.",
+              3
+            )}
+            {this.renderExperienceBox(
+              stock4,
+              "Data Intern - Kanalytics",
+              "Python, PHP, Data Collection",
+              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.",
+              4
+            )}
           </div>
 
           {/* Projects Section */}
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
-            {this.renderBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "gallery-kpi")}
-            {this.renderBox(stock5, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "gallery-sec")}
-            {this.renderBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "gallery-game")}
+            {this.renderProjectBox(
+              stock4,
+              "Financial KPI Dashboard",
+              "Power BI, Compustat, CRSP",
+              "gallery-kpi"
+            )}
+            {this.renderProjectBox(
+              stock5,
+              "SEC Stock Analysis",
+              "SEC API, yFinance, Oracle Cloud",
+              "gallery-sec"
+            )}
+            {this.renderProjectBox(
+              stock1,
+              "Ping Pong Game",
+              "Python, Pygame, Score Tracker",
+              "gallery-game"
+            )}
           </div>
         </div>
       </section>
@@ -76,6 +162,7 @@ class Portfolio extends React.Component {
 }
 
 export default Portfolio;
+
 
 // import React from "react";
 
