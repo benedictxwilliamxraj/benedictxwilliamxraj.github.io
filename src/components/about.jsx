@@ -138,12 +138,6 @@ class About extends React.Component {
                                   <img key={idx} src={item.icon} alt="" className="tech-icon" />
                                 )
                               )}
-                              </div>
-                            </div>
-                              ) : (
-                                <img key={idx} src={item.icon} alt="" className="tech-icon" />
-                              )
-                            )}
                           </div>
                         </div>
                       ))}
