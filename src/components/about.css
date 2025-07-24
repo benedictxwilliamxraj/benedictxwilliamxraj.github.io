@@ -1,0 +1,33 @@
+.stack-category {
+  margin-bottom: 2rem;
+}
+
+.stack-category h6 {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding-top: 0.5rem;
+}
+
+.tech-icon {
+  width: 48px;
+  height: 48px;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+  object-fit: contain;
+  background-color: #fff;
+  padding: 4px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
+
+.tech-icon:hover {
+  transform: scale(1.4);
+  z-index: 10;
+}
+

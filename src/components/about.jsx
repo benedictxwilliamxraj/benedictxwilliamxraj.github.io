@@ -1,5 +1,6 @@
 import React from "react";
 import myImage from "../img/myImage.png";
+import "./about.css";
 
 class About extends React.Component {
   constructor() {
@@ -119,15 +120,7 @@ class About extends React.Component {
                                   src={item.icon}
                                   alt=""
                                   title=""
-                                  style={{
-                                    width: "40px",
-                                    height: "40px",
-                                    objectFit: "contain",
-                                    borderRadius: "6px",
-                                    background: "#fff",
-                                    padding: "4px",
-                                    boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
-                                  }}
+                                  className="tech-icon"
                                 />
                               ))}
                             </div>
