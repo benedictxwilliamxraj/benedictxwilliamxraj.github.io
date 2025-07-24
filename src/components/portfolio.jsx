@@ -6,7 +6,7 @@ import stock1 from "../img/godigitaltc_logo.jpeg";
 import stock2 from "../img/ctbk.png";
 import stock3 from "../img/tifr.png";
 import stock4 from "../img/kanalytics.jpeg";
-import stock5 from "../img/image6.jpg"; // optional placeholder for projects
+// import stock5 from "../img/image6.jpg"; 
 
 class Portfolio extends React.Component {
   constructor() {
