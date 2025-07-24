@@ -33,8 +33,10 @@ class About extends React.Component {
               isSplit: true,
               splitIcons: [
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png",
+                "https://w7.pngwing.com/pngs/488/24/png-transparent-aws-lambda-hd-logo.png",
                 "https://miro.medium.com/v2/resize:fit:512/1*rOHiDUcmRXiAZZur7y0_UA.png",
                 "https://banner2.cleanpng.com/20180704/hsu/aaxzd7fpd.webp",
+                "https://images.icon-icons.com/2699/PNG/512/amazon_kinesis_logo_icon_169609.png",
                 "https://d3g9o9u8re44ak.cloudfront.net/logo/40c0988b-b7ec-4c51-9732-5fd3c7d52928/96ad06d5-cf24-4ffe-94fb-5d3085d7d3eb.png"
               ]
             },
@@ -49,17 +51,18 @@ class About extends React.Component {
           category: "ELT / ETL",
           items: [
             { icon: "https://images.seeklogo.com/logo-png/43/1/fivetran-logo-png_seeklogo-433335.png" },
-            { icon: "https://upload.wikimedia.org/wikipedia/commons/7/75/Qlik_Logo.png" },
-            { icon: "https://www.vectorlogo.zone/logos/getdbtio/getdbtio-icon.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
-            { icon: "https://cdn.worldvectorlogo.com/logos/databricks-icon.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" }
+            { icon: "https://www.svgrepo.com/show/354242/qlik.svg" },
+            { icon: "https://images.seeklogo.com/logo-png/43/1/dbt-logo-png_seeklogo-431111.png" },
+            { icon: "https://mma.prnewswire.com/media/1972315/Ascend_io_Logo.jpg" },
+            { icon: "https://ih1.redbubble.net/image.794212411.9451/st,small,507x507-pad,600x600,f8f8f8.u2.jpg" },
+            { icon: "https://www.svgrepo.com/show/353950/kafka.svg" },
           ]
         },
         {
           category: "Orchestration",
           items: [
-            { icon: "https://airflow.apache.org/images/airflow-logo.png" }
+            { icon: "https://miro.medium.com/v2/resize:fit:900/1*BsArmSynxzIKGYZ5h0hoKA.png" },
+            { icon: "https://image.pngaaa.com/421/6030421-middle.png" }
           ]
         },
         {
@@ -117,20 +120,26 @@ class About extends React.Component {
                           <h6>{group.category}</h6>
                           <div className="icon-row">
                             {group.items.map((item, idx) =>
-                              item.isAwsSplit ? (
-                                <div className="aws-hover-wrapper" key={idx}>
-                                  <img src={item.icon} alt="AWS" className="tech-icon aws-main" />
-                                  <div className="aws-split-icons">
-                                    {item.splitIcons.map((splitIcon, splitIdx) => (
-                                      <img
-                                        key={splitIdx}
-                                        src={splitIcon}
-                                        alt={`AWS Split ${splitIdx}`}
-                                        className="tech-icon split"
-                                      />
-                                    ))}
+                                item.isSplit ? (
+                                  <div className="aws-hover-wrapper" key={idx}>
+                                    <img src={item.icon} alt="" className="tech-icon aws-main" />
+                                    <div className="aws-split-icons">
+                                      {item.splitIcons.map((splitIcon, splitIdx) => (
+                                        <img
+                                          key={splitIdx}
+                                          src={splitIcon}
+                                          alt=""
+                                          className="tech-icon split"
+                                        />
+                                      ))}
+                                    </div>
                                   </div>
-                                </div>
+                                ) : (
+                                  <img key={idx} src={item.icon} alt="" className="tech-icon" />
+                                )
+                              )}
+                              </div>
+                            </div>
                               ) : (
                                 <img key={idx} src={item.icon} alt="" className="tech-icon" />
                               )
