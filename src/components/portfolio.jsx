@@ -111,4 +111,15 @@ class Portfolio extends React.Component {
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
             {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "https://github.com/yourusername/kpi-dashboard")}
-            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/yourusername/sec-analys
+            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/yourusername/sec-analysis")}
+            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "https://github.com/yourusername/pingpong-game")}
+          </div>
+        </div>
+
+        {this.renderModal()}
+      </section>
+    );
+  }
+}
+
+export default Portfolio;
