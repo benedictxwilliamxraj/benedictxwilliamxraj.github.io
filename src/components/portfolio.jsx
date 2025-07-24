@@ -6,6 +6,12 @@ import stock1 from "../img/godigitaltc_logo.jpeg";
 import stock2 from "../img/ctbk.png";
 import stock3 from "../img/tifr.png";
 import stock4 from "../img/kanalytics.jpeg";
+import aiss from "../img/aiss.jpeg";
+import emp_demand from "../img/hr.png";
+import localrag from "../img/localrag.jpg";
+import sec_analysis from "../img/stock.jpeg";
+import facesimi from "../img/facesimi.jpeg";
+
 
 class Portfolio extends React.Component {
   constructor() {
@@ -101,7 +107,7 @@ class Portfolio extends React.Component {
           <h4 className="text-center mb-4">Work Experience</h4>
           <div className="row">
             {this.renderExperienceBox(stock, "Data Engineer - LTIMindtree", "ELT/ETL, Snowflake, ADF, Airflow, Qlik", "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.", 0)}
-            {this.renderExperienceBox(stock1, "Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.", 1)}
+            {this.renderExperienceBox(stock1, "Data Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.", 1)}
             {this.renderExperienceBox(stock2, "Project Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.", 2)}
             {this.renderExperienceBox(stock3, "Research Intern - TIFR", "Python, OpenCV, Threading", "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.", 3)}
             {this.renderExperienceBox(stock4, "Data Intern - Kanalytics", "Python, PHP, Data Collection", "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.", 4)}
@@ -110,9 +116,11 @@ class Portfolio extends React.Component {
           {/* Projects */}
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
-            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "https://github.com/yourusername/kpi-dashboard")}
-            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/yourusername/sec-analysis")}
-            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "https://github.com/yourusername/pingpong-game")}
+            {this.renderProjectBox(sec_analysis, "SEC Stock Analysis", "Power BI, Oracle, Data Modeling, ETL/ELT, Docker", "https://github.com/benedictxwilliamxraj/ETE_Fin_Sector_Company_LevelAnalysis")}
+            {this.renderProjectBox(hr, "Employee Demand Planning", "Python, Streamlit, sklearn", "https://github.com/yourusername/sec-analysis")}
+            {this.renderProjectBox(localrag, "Local RAG", "Python, LLM's, Vector Database", "https://github.com/benedictxwilliamxraj/Local-RAG")}
+            {this.renderProjectBox(aiss, "AI Surveliance System", "Python, OpenCV, NodeJS", "https://github.com/benedictxwilliamxraj/Survelliance_Pyqt5")}
+            {this.renderProjectBox(facesimi, "Face Similarity Search", "Python, OpenCV, PHP", "https://github.com/benedictxwilliamxraj/Face_recognition")}
           </div>
         </div>
 
