@@ -30,3 +30,30 @@
   transform: scale(2);
   z-index: 20;
 }
+
+.aws-hover-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.aws-split-icons {
+  display: flex;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.5);
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.aws-hover-wrapper:hover .aws-main {
+  opacity: 0;
+}
+
+.aws-hover-wrapper:hover .aws-split-icons {
+  opacity: 1;
+  transform: scale(1.2) translateX(60px);
+  pointer-events: auto;
+}

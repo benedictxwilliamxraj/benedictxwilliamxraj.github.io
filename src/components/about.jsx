@@ -11,17 +11,26 @@ class About extends React.Component {
           items: [
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" }
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" },
+            { icon: "https://images.seeklogo.com/logo-png/50/1/sql-logo-png_seeklogo-505247.png" }
           ]
         },
         {
           category: "Databases / Cloud",
           items: [
-            { icon: "https://images.seeklogo.com/logo-png/33/1/snowflake-logo-png_seeklogo-336501.png" },
+            { icon: "https://png.pngtree.com/png-clipart/20190903/original/pngtree-cartoon-snowflake-icon-download-png-image_4440099.jpg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" }
+            {
+              icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+              isAwsSplit: true,
+              splitIcons: [
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+                "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg"
+              ]
+            }
           ]
         },
         {
@@ -95,14 +104,25 @@ class About extends React.Component {
                         <div className="stack-category" key={index}>
                           <h6>{group.category}</h6>
                           <div className="icon-row">
-                            {group.items.map((item, idx) => (
-                              <img
-                                key={idx}
-                                src={item.icon}
-                                alt=""
-                                className="tech-icon"
-                              />
-                            ))}
+                            {group.items.map((item, idx) =>
+                              item.isAwsSplit ? (
+                                <div className="aws-hover-wrapper" key={idx}>
+                                  <img src={item.icon} alt="AWS" className="tech-icon aws-main" />
+                                  <div className="aws-split-icons">
+                                    {item.splitIcons.map((splitIcon, splitIdx) => (
+                                      <img
+                                        key={splitIdx}
+                                        src={splitIcon}
+                                        alt={`AWS Split ${splitIdx}`}
+                                        className="tech-icon split"
+                                      />
+                                    ))}
+                                  </div>
+                                </div>
+                              ) : (
+                                <img key={idx} src={item.icon} alt="" className="tech-icon" />
+                              )
+                            )}
                           </div>
                         </div>
                       ))}
