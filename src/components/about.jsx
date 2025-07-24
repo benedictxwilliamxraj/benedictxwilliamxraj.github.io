@@ -18,19 +18,31 @@ class About extends React.Component {
         {
           category: "Databases / Cloud",
           items: [
-            { icon: "https://png.pngtree.com/png-clipart/20190903/original/pngtree-cartoon-snowflake-icon-download-png-image_4440099.jpg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+            {
+              icon: "https://c8.alamy.com/comp/2XX3N5M/microsoft-azure-logo-2XX3N5M.jpg",
+              isSplit: true,
+              splitIcons: [
+                "https://www.zohowebstatic.com/sites/zweb/images/dataprep/comparison/azure-data-factory.png",
+                "https://images.seeklogo.com/logo-png/48/1/azure-databricks-logo-png_seeklogo-488344.png",
+                "https://1000logos.net/wp-content/uploads/2024/08/Azure-DevOps-Logo.png",
+                "https://cdn.imgbin.com/23/23/9/imgbin-microsoft-sql-server-microsoft-azure-sql-database-microsoft-M1w5fcDCwzsX6i4yGUau0XeSv.jpg"
+              ]
+            },
             {
               icon: "https://images.seeklogo.com/logo-png/31/2/amazon-web-services-aws-logo-png_seeklogo-319188.png",
-              isAwsSplit: true,
+              isSplit: true,
               splitIcons: [
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Amazon-S3-Logo.svg/1712px-Amazon-S3-Logo.svg.png",
                 "https://miro.medium.com/v2/resize:fit:512/1*rOHiDUcmRXiAZZur7y0_UA.png",
-                "https://banner2.cleanpng.com/20180704/hsu/aaxzd7fpd.webp"
+                "https://banner2.cleanpng.com/20180704/hsu/aaxzd7fpd.webp",
+                "https://d3g9o9u8re44ak.cloudfront.net/logo/40c0988b-b7ec-4c51-9732-5fd3c7d52928/96ad06d5-cf24-4ffe-94fb-5d3085d7d3eb.png"
               ]
-            }
+            },
+            { icon: "https://png.pngtree.com/png-clipart/20190903/original/pngtree-cartoon-snowflake-icon-download-png-image_4440099.jpg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" }
+            
           ]
         },
         {
