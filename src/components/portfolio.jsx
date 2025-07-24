@@ -27,8 +27,12 @@ class Portfolio extends React.Component {
 
   renderExperienceBox(image, title, category, description, index) {
     return (
-      <div className="col-md-4 mb-4" key={index}>
-        <div className="work-box" onClick={() => this.openModal(title, category, description)} style={{ cursor: "pointer" }}>
+      <div className="col-md-4 mb-4 d-flex align-items-stretch" key={index}>
+        <div
+          className="work-box w-100"
+          onClick={() => this.openModal(title, category, description)}
+          style={{ cursor: "pointer" }}
+        >
           <div className="work-img">
             <img src={image} alt={title} className="img-fluid" />
           </div>
@@ -43,27 +47,18 @@ class Portfolio extends React.Component {
     );
   }
 
-  renderProjectBox(image, title, category, galleryId = "gallery-mf") {
+  renderProjectBox(image, title, category, repoLink) {
     return (
-      <div className="col-md-4 mb-4" key={title}>
-        <div className="work-box">
-          <a href={image} data-lightbox={galleryId}>
+      <div className="col-md-4 mb-4 d-flex align-items-stretch" key={title}>
+        <div className="work-box w-100">
+          <a href={repoLink} target="_blank" rel="noopener noreferrer">
             <div className="work-img">
               <img src={image} alt={title} className="img-fluid" />
             </div>
-            <div className="work-content">
-              <div className="row">
-                <div className="col-sm-8">
-                  <h2 className="w-title">{title}</h2>
-                  <div className="w-more">
-                    <span className="w-ctegory">{category}</span>
-                  </div>
-                </div>
-                <div className="col-sm-4">
-                  <div className="w-like">
-                    <span className="ion-ios-plus-outline"></span>
-                  </div>
-                </div>
+            <div className="work-content text-center">
+              <h2 className="w-title">{title}</h2>
+              <div className="w-more">
+                <span className="w-ctegory">{category}</span>
               </div>
             </div>
           </a>
@@ -149,9 +144,9 @@ class Portfolio extends React.Component {
           {/* Projects */}
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
-            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "gallery-kpi")}
-            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "gallery-sec")}
-            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "gallery-game")}
+            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "https://github.com/benedictxwilliamxraj/ETE_Fin_Sector_Company_LevelAnalysis")}
+            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/benedictxwilliamxraj/SEC_Stock_Analysis")}
+            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "https://github.com/benedictxwilliamxraj/PingPongGame")}
           </div>
         </div>
 
