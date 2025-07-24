@@ -18,7 +18,7 @@ class About extends React.Component {
         {
           category: "Databases / Cloud",
           items: [
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/snowflake/snowflake-original.svg" },
+            { icon: "https://images.seeklogo.com/logo-png/33/1/snowflake-logo-png_seeklogo-336501.png" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
@@ -28,7 +28,7 @@ class About extends React.Component {
         {
           category: "ELT / ETL",
           items: [
-            { icon: "https://seeklogo.com/images/F/fivetran-logo-7B7F635E73-seeklogo.com.png" },
+            { icon: "https://images.seeklogo.com/logo-png/43/1/fivetran-logo-png_seeklogo-433335.png" },
             { icon: "https://upload.wikimedia.org/wikipedia/commons/7/75/Qlik_Logo.png" },
             { icon: "https://www.vectorlogo.zone/logos/getdbtio/getdbtio-icon.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
