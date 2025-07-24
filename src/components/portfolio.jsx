@@ -143,7 +143,7 @@ class Portfolio extends React.Component {
               "gallery-kpi"
             )}
             {this.renderProjectBox(
-              stock5,
+              stock4,
               "SEC Stock Analysis",
               "SEC API, yFinance, Oracle Cloud",
               "gallery-sec"
