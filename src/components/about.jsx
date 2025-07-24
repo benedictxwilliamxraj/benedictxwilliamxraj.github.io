@@ -88,17 +88,22 @@ class About extends React.Component {
         {
           id: "first-p-about",
           content:
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dui nec nisl posuere feugiat."
+            "I work with data.But more than that I make data actually useful"
         },
         {
           id: "second-p-about",
           content:
-            "Praesent semper elit at nisl sodales, in cursus neque tristique. Curabitur eu tellus id justo dapibus finibus."
+            "A few years back, I was just another engineer at a desk. Writing ETL pipelines. Debugging broken joins. Fixing the same “missing null handling” bug for the tenth time."
         },
         {
           id: "third-p-about",
           content:
-            "Sed at turpis a nulla facilisis ullamcorper. In quis justo vel elit pulvinar laoreet."
+            "It wasn’t glamorous. But it taught me a lot."
+        },
+        {
+          id: "fourth-p-about",
+          content:
+            "I completed Business Analytics at the UB to get an idea of business data. I’ve got 3+ years of experience as a Data Engineer. And I’ve built stuff that runs in the cloud, crunches millions of rows, and <em>helps real people make better decisions</em>"
         }
       ]
     };
@@ -120,24 +125,24 @@ class About extends React.Component {
                           <h6>{group.category}</h6>
                           <div className="icon-row">
                             {group.items.map((item, idx) =>
-                              item.isSplit ? (
-                                <div className="split-hover-wrapper" key={idx}>
-                                  <img src={item.icon} alt="" className="tech-icon split-main" />
-                                  <div className="split-icons-row">
-                                    {item.splitIcons.map((splitIcon, splitIdx) => (
-                                      <img
-                                        key={splitIdx}
-                                        src={splitIcon}
-                                        alt=""
-                                        className="tech-icon split"
-                                      />
-                                    ))}
-                                  </div>
+                            item.isSplit ? (
+                              <div className="split-hover-wrapper" key={idx}>
+                                <img src={item.icon} alt="" className="tech-icon split-main" />
+                                <div className="split-icons-row">
+                                  {item.splitIcons.map((splitIcon, splitIdx) => (
+                                    <img
+                                      key={splitIdx}
+                                      src={splitIcon}
+                                      alt=""
+                                      className="tech-icon split"
+                                    />
+                                  ))}
                                 </div>
-                              ) : (
-                                <img key={idx} src={item.icon} alt="" className="tech-icon" />
-                              )
-                            )}
+                              </div>
+                            ) : (
+                              <img key={idx} src={item.icon} alt="" className="tech-icon" />
+                            )
+                          )}
                           </div>
                         </div>
                       ))}
