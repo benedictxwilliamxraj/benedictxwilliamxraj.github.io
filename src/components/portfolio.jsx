@@ -8,27 +8,11 @@ import stock3 from "../img/tifr.png";
 import stock4 from "../img/kanalytics.jpeg";
 
 class Portfolio extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      expanded: null // To toggle work experience descriptions
-    };
-  }
-
-  handleToggle = (index) => {
-    this.setState({ expanded: this.state.expanded === index ? null : index });
-  };
-
-  renderExperienceBox(image, title, category, description, index) {
-    const isOpen = this.state.expanded === index;
+  renderExperienceBox(image, title, category, description) {
     return (
-      <div className="col-md-4 mb-4 d-flex">
-        <div className="work-box w-100">
-          <div
-            className="work-img"
-            style={{ cursor: "pointer" }}
-            onClick={() => this.handleToggle(index)}
-          >
+      <div className="col-md-4 mb-4">
+        <div className="work-box">
+          <div className="work-img">
             <img src={image} alt={title} className="img-fluid" />
           </div>
           <div className="work-content">
@@ -36,11 +20,9 @@ class Portfolio extends React.Component {
             <div className="w-more">
               <span className="w-ctegory">{category}</span>
             </div>
-            {isOpen && (
-              <div className="work-description mt-2">
-                <p>{description}</p>
-              </div>
-            )}
+            <div className="work-description mt-2">
+              <p>{description}</p>
+            </div>
           </div>
         </div>
       </div>
@@ -49,8 +31,8 @@ class Portfolio extends React.Component {
 
   renderProjectBox(image, title, category, galleryId = "gallery-mf") {
     return (
-      <div className="col-md-4 mb-4 d-flex">
-        <div className="work-box w-100">
+      <div className="col-md-4 mb-4" key={title}>
+        <div className="work-box">
           <a href={image} data-lightbox={galleryId}>
             <div className="work-img">
               <img src={image} alt={title} className="img-fluid" />
@@ -99,36 +81,31 @@ class Portfolio extends React.Component {
               stock,
               "Data Engineer - LTIMindtree",
               "ELT/ETL, Snowflake, ADF, Airflow, Qlik",
-              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.",
-              0
+              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards."
             )}
             {this.renderExperienceBox(
               stock1,
               "Engineer - Go Digital",
               "Oracle Fusion, Snowflake, Data Modeling",
-              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.",
-              1
+              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards."
             )}
             {this.renderExperienceBox(
               stock2,
               "Project Intern - CTBK",
               "Python, Linear Programming",
-              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.",
-              2
+              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler."
             )}
             {this.renderExperienceBox(
               stock3,
               "Research Intern - TIFR",
               "Python, OpenCV, Threading",
-              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.",
-              3
+              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms."
             )}
             {this.renderExperienceBox(
               stock4,
               "Data Intern - Kanalytics",
               "Python, PHP, Data Collection",
-              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.",
-              4
+              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs."
             )}
           </div>
 
@@ -161,4 +138,3 @@ class Portfolio extends React.Component {
 }
 
 export default Portfolio;
-
