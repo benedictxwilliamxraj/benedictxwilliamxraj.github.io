@@ -11,23 +11,22 @@
 .icon-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   padding-top: 0.5rem;
 }
 
 .tech-icon {
-  width: 48px;
-  height: 48px;
+  width: 64px;
+  height: 64px;
   transition: transform 0.3s ease;
-  border-radius: 8px;
+  border-radius: 10px;
   object-fit: contain;
   background-color: #fff;
-  padding: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  padding: 6px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
 }
 
 .tech-icon:hover {
-  transform: scale(1.4);
-  z-index: 10;
+  transform: scale(2);
+  z-index: 20;
 }
-

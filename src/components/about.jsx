@@ -1,5 +1,4 @@
 import React from "react";
-import myImage from "../img/myImage.png";
 import "./about.css";
 
 class About extends React.Component {
@@ -65,17 +64,17 @@ class About extends React.Component {
         {
           id: "first-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dui nec nisl posuere feugiat."
         },
         {
           id: "second-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "Praesent semper elit at nisl sodales, in cursus neque tristique. Curabitur eu tellus id justo dapibus finibus."
         },
         {
           id: "third-p-about",
           content:
-            "Lorem ipsum pariatur consectetur laboris occaecat nulla aliqua irure ad deserunt duis. Eiusmod nulla cupidatat labore sint sit aute dolore irure nostrud ut incididunt. Anim laborum reprehenderit labore magna ut dolore quis irure. Labore ea duis deserunt ullamco irure fugiat deserunt ut nisi ea minim proident. Nisi consectetur do non magna duis aliqua minim minim veniam. In occaecat minim qui consequat elit mollit consectetur non id tempor. Amet adipisicing occaecat tempor culpa quis est duis."
+            "Sed at turpis a nulla facilisis ullamcorper. In quis justo vel elit pulvinar laoreet."
         }
       ]
     };
@@ -90,41 +89,23 @@ class About extends React.Component {
               <div className="box-shadow-full">
                 <div className="row">
                   <div className="col-md-6">
-                    <div className="row">
-                      <div
-                        className="col-sm-6 col-md-5"
-                        style={{ margin: "0 auto" }}
-                      >
-                        <div
-                          className="about-img"
-                          style={{ textAlign: "center" }}
-                        >
-                          <img
-                            className="img-fluid rounded b-shadow-a"
-                            alt=""
-                          />
-                        </div>
-                      </div>
-                    </div>
                     <div className="skill-mf">
-                      {/* <p className="title-s">Skill</p> */}
                       <p className="title-s">Tech Stack</p>
-                        {this.state.skills.map((group, index) => (
-                          <div key={index} style={{ marginBottom: "25px" }}>
-                            <h6 style={{ fontWeight: "bold", marginBottom: "10px" }}>{group.category}</h6>
-                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
-                              {group.items.map((item, idx) => (
-                                <img
-                                  key={idx}
-                                  src={item.icon}
-                                  alt=""
-                                  title=""
-                                  className="tech-icon"
-                                />
-                              ))}
-                            </div>
+                      {this.state.skills.map((group, index) => (
+                        <div className="stack-category" key={index}>
+                          <h6>{group.category}</h6>
+                          <div className="icon-row">
+                            {group.items.map((item, idx) => (
+                              <img
+                                key={idx}
+                                src={item.icon}
+                                alt=""
+                                className="tech-icon"
+                              />
+                            ))}
                           </div>
-                        ))}
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -132,13 +113,11 @@ class About extends React.Component {
                       <div className="title-box-2">
                         <h5 className="title-left">About Me</h5>
                       </div>
-                      {this.state.about_me.map(content => {
-                        return (
-                          <p className="lead" key={content.id}>
-                            {content.content}
-                          </p>
-                        );
-                      })}
+                      {this.state.about_me.map(content => (
+                        <p className="lead" key={content.id}>
+                          {content.content}
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </div>
