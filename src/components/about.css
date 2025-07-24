@@ -31,29 +31,47 @@
   z-index: 20;
 }
 
-.aws-hover-wrapper {
+.split-hover-wrapper {
   position: relative;
   display: inline-block;
 }
 
-.aws-split-icons {
-  display: flex;
-  gap: 10px;
+.split-icons-row {
+  display: none;
+  margin-top: 10px;
   position: absolute;
-  top: 0;
   left: 0;
-  opacity: 0;
-  transform: scale(0.5);
-  pointer-events: none;
-  transition: all 0.3s ease;
+  width: max-content;
+  z-index: 10;
+  background: #fff;
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
-.aws-hover-wrapper:hover .aws-main {
-  opacity: 0;
+.split-hover-wrapper:hover .split-icons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
 }
 
-.aws-hover-wrapper:hover .aws-split-icons {
-  opacity: 1;
-  transform: scale(1.2) translateX(60px);
-  pointer-events: auto;
+.split-main {
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.split-main:hover {
+  transform: scale(1.6);
+}
+
+.split-icons-row .tech-icon {
+  transform: scale(1);
+  width: 40px;
+  height: 40px;
+}
+
+.split-icons-row .tech-icon:hover {
+  transform: scale(1.4);
 }

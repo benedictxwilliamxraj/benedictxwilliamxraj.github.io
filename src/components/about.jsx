@@ -68,7 +68,7 @@ class About extends React.Component {
         {
           category: "Data Visualization",
           items: [
-            { icon: "https://cdn.worldvectorlogo.com/logos/power-bi-1.svg" },
+            { icon: "https://logos-world.net/wp-content/uploads/2022/02/Power-BI-Logo.png" },
             { icon: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
             { icon: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png" }
           ]
@@ -120,24 +120,24 @@ class About extends React.Component {
                           <h6>{group.category}</h6>
                           <div className="icon-row">
                             {group.items.map((item, idx) =>
-                                item.isSplit ? (
-                                  <div className="aws-hover-wrapper" key={idx}>
-                                    <img src={item.icon} alt="" className="tech-icon aws-main" />
-                                    <div className="aws-split-icons">
-                                      {item.splitIcons.map((splitIcon, splitIdx) => (
-                                        <img
-                                          key={splitIdx}
-                                          src={splitIcon}
-                                          alt=""
-                                          className="tech-icon split"
-                                        />
-                                      ))}
-                                    </div>
+                              item.isSplit ? (
+                                <div className="split-hover-wrapper" key={idx}>
+                                  <img src={item.icon} alt="" className="tech-icon split-main" />
+                                  <div className="split-icons-row">
+                                    {item.splitIcons.map((splitIcon, splitIdx) => (
+                                      <img
+                                        key={splitIdx}
+                                        src={splitIcon}
+                                        alt=""
+                                        className="tech-icon split"
+                                      />
+                                    ))}
                                   </div>
-                                ) : (
-                                  <img key={idx} src={item.icon} alt="" className="tech-icon" />
-                                )
-                              )}
+                                </div>
+                              ) : (
+                                <img key={idx} src={item.icon} alt="" className="tech-icon" />
+                              )
+                            )}
                           </div>
                         </div>
                       ))}
