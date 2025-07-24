@@ -22,10 +22,10 @@ class Portfolio extends React.Component {
     };
   }
 
-  openModal = (title, category, description) => {
+  openModal = (title, category, description, startDate, endDate ) => {
     this.setState({
       showModal: true,
-      modalData: { title, category, description }
+      modalData: { title, category, description, startDate, endDate  }
     });
   };
 
@@ -36,7 +36,7 @@ class Portfolio extends React.Component {
   renderExperienceBox(image, title, category, description, index) {
     return (
       <div className="col-md-4 mb-4" key={index}>
-        <div className="work-box" onClick={() => this.openModal(title, category, description)} style={{ cursor: "pointer" }}>
+        <div className="work-box" onClick={() => this.openModal(title, category, description, startDate, endDate)} style={{ cursor: "pointer" }}>
           <div className="work-img">
             <img src={image} alt={title} className="img-fluid" />
           </div>
@@ -79,6 +79,7 @@ class Portfolio extends React.Component {
       <div className="modal-overlay" onClick={this.closeModal}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <h4>{modalData.title}</h4>
+          <p><strong>Duration:</strong> {modalData.startDate} – {modalData.endDate}</p>
           <p><strong>Stack:</strong> {modalData.category}</p>
           <p>{modalData.description}</p>
           <button className="btn btn-secondary mt-3" onClick={this.closeModal}>
@@ -106,11 +107,11 @@ class Portfolio extends React.Component {
           {/* Work Experience */}
           <h4 className="text-center mb-4">Work Experience</h4>
           <div className="row">
-            {this.renderExperienceBox(stock, "Data Engineer - LTIMindtree", "ELT/ETL, Snowflake, ADF, Airflow, Qlik", "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.", 0)}
-            {this.renderExperienceBox(stock1, "Data Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.", 1)}
-            {this.renderExperienceBox(stock2, "Data Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.", 2)}
-            {this.renderExperienceBox(stock3, "Research Intern - TIFR", "Python, OpenCV, Threading", "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.", 3)}
-            {this.renderExperienceBox(stock4, "Data Intern - Kanalytics", "Python, PHP, Data Collection", "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.", 4)}
+            {this.renderExperienceBox(stock2, "Data Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.","Jul-2024","Dec-2024", 0)}
+            {this.renderExperienceBox(stock1, "Data Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.","Oct-2023","Jun-2024", 1)}
+            {this.renderExperienceBox(stock, "Data Engineer - LTIMindtree", "ELT/ETL, Snowflake, ADF, Airflow, Qlik", "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.","Jun-2021","Oct-2023", 2)}
+            {this.renderExperienceBox(stock3, "Research Intern - TIFR", "Python, OpenCV, Threading", "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.","Apr-2020","Apr-2021", 3)}
+            {this.renderExperienceBox(stock4, "Data Intern - Kanalytics", "Python, PHP, Data Collection", "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.","Dec-2019","Jan-2020", 4)}
           </div>
 
           {/* Projects */}
