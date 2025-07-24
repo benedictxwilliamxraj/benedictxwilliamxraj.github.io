@@ -117,7 +117,7 @@ class Portfolio extends React.Component {
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
             {this.renderProjectBox(sec_analysis, "SEC Stock Analysis", "Power BI, Oracle, Data Modeling, ETL/ELT, Docker", "https://github.com/benedictxwilliamxraj/ETE_Fin_Sector_Company_LevelAnalysis")}
-            {this.renderProjectBox(hr, "Employee Demand Planning", "Python, Streamlit, sklearn", "https://github.com/yourusername/sec-analysis")}
+            {this.renderProjectBox(emp_demand, "Employee Demand Planning", "Python, Streamlit, sklearn", "https://github.com/yourusername/sec-analysis")}
             {this.renderProjectBox(localrag, "Local RAG", "Python, LLM's, Vector Database", "https://github.com/benedictxwilliamxraj/Local-RAG")}
             {this.renderProjectBox(aiss, "AI Surveliance System", "Python, OpenCV, NodeJS", "https://github.com/benedictxwilliamxraj/Survelliance_Pyqt5")}
             {this.renderProjectBox(facesimi, "Face Similarity Search", "Python, OpenCV, PHP", "https://github.com/benedictxwilliamxraj/Face_recognition")}
