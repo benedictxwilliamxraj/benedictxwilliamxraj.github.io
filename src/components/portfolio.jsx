@@ -1,4 +1,6 @@
 import React from "react";
+import "./portfolio.css";
+
 import stock from "../img/LTIMindtree.jpg";
 import stock1 from "../img/godigitaltc_logo.jpeg";
 import stock2 from "../img/ctbk.png";
@@ -27,12 +29,8 @@ class Portfolio extends React.Component {
 
   renderExperienceBox(image, title, category, description, index) {
     return (
-      <div className="col-md-4 mb-4 d-flex align-items-stretch" key={index}>
-        <div
-          className="work-box w-100"
-          onClick={() => this.openModal(title, category, description)}
-          style={{ cursor: "pointer" }}
-        >
+      <div className="col-md-4 mb-4" key={index}>
+        <div className="work-box" onClick={() => this.openModal(title, category, description)} style={{ cursor: "pointer" }}>
           <div className="work-img">
             <img src={image} alt={title} className="img-fluid" />
           </div>
@@ -47,11 +45,11 @@ class Portfolio extends React.Component {
     );
   }
 
-  renderProjectBox(image, title, category, repoLink) {
+  renderProjectBox(image, title, category, githubLink) {
     return (
-      <div className="col-md-4 mb-4 d-flex align-items-stretch" key={title}>
-        <div className="work-box w-100">
-          <a href={repoLink} target="_blank" rel="noopener noreferrer">
+      <div className="col-md-4 mb-4" key={title}>
+        <div className="work-box">
+          <a href={githubLink} target="_blank" rel="noopener noreferrer">
             <div className="work-img">
               <img src={image} alt={title} className="img-fluid" />
             </div>
@@ -72,8 +70,8 @@ class Portfolio extends React.Component {
     if (!showModal) return null;
 
     return (
-      <div className="modal-overlay">
-        <div className="modal-content">
+      <div className="modal-overlay" onClick={this.closeModal}>
+        <div className="modal-content" onClick={(e) => e.stopPropagation()}>
           <h4>{modalData.title}</h4>
           <p><strong>Stack:</strong> {modalData.category}</p>
           <p>{modalData.description}</p>
@@ -93,9 +91,7 @@ class Portfolio extends React.Component {
             <div className="col-sm-12">
               <div className="title-box text-center">
                 <h3 className="title-a">Portfolio</h3>
-                <p className="subtitle-a">
-                  Here’s a look at my work experience and selected projects.
-                </p>
+                <p className="subtitle-a">Here’s a look at my work experience and selected projects.</p>
                 <div className="line-mf"></div>
               </div>
             </div>
@@ -104,57 +100,15 @@ class Portfolio extends React.Component {
           {/* Work Experience */}
           <h4 className="text-center mb-4">Work Experience</h4>
           <div className="row">
-            {this.renderExperienceBox(
-              stock,
-              "Data Engineer - LTIMindtree",
-              "ELT/ETL, Snowflake, ADF, Airflow, Qlik",
-              "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.",
-              0
-            )}
-            {this.renderExperienceBox(
-              stock1,
-              "Engineer - Go Digital",
-              "Oracle Fusion, Snowflake, Data Modeling",
-              "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.",
-              1
-            )}
-            {this.renderExperienceBox(
-              stock2,
-              "Project Intern - CTBK",
-              "Python, Linear Programming",
-              "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.",
-              2
-            )}
-            {this.renderExperienceBox(
-              stock3,
-              "Research Intern - TIFR",
-              "Python, OpenCV, Threading",
-              "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.",
-              3
-            )}
-            {this.renderExperienceBox(
-              stock4,
-              "Data Intern - Kanalytics",
-              "Python, PHP, Data Collection",
-              "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.",
-              4
-            )}
+            {this.renderExperienceBox(stock, "Data Engineer - LTIMindtree", "ELT/ETL, Snowflake, ADF, Airflow, Qlik", "Built ELT pipelines on Snowflake, automated ingestion via Fivetran, orchestrated workflows using Airflow, and visualized KPIs on Qlik dashboards.", 0)}
+            {this.renderExperienceBox(stock1, "Engineer - Go Digital", "Oracle Fusion, Snowflake, Data Modeling", "Extracted HRMS/SCM data from Oracle Fusion, modeled star schemas, implemented merge logic, and designed RBAC-based Snowflake dashboards.", 1)}
+            {this.renderExperienceBox(stock2, "Project Intern - CTBK", "Python, Linear Programming", "Forecasted staffing and cost using Prophet + Linear Programming, visualized results with Streamlit, and automated scripts via scheduler.", 2)}
+            {this.renderExperienceBox(stock3, "Research Intern - TIFR", "Python, OpenCV, Threading", "Worked on multi-threaded image enhancement using OpenCV for microscopy data. Focused on spatial denoising algorithms.", 3)}
+            {this.renderExperienceBox(stock4, "Data Intern - Kanalytics", "Python, PHP, Data Collection", "Scraped data from web sources and social media using Python, and automated reports with PHP + CRON jobs.", 4)}
           </div>
 
           {/* Projects */}
           <h4 className="text-center mt-5 mb-4">Projects</h4>
           <div className="row">
-            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "https://github.com/benedictxwilliamxraj/ETE_Fin_Sector_Company_LevelAnalysis")}
-            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/benedictxwilliamxraj/SEC_Stock_Analysis")}
-            {this.renderProjectBox(stock1, "Ping Pong Game", "Python, Pygame, Score Tracker", "https://github.com/benedictxwilliamxraj/PingPongGame")}
-          </div>
-        </div>
-
-        {/* Modal */}
-        {this.renderModal()}
-      </section>
-    );
-  }
-}
-
-export default Portfolio;
+            {this.renderProjectBox(stock4, "Financial KPI Dashboard", "Power BI, Compustat, CRSP", "https://github.com/yourusername/kpi-dashboard")}
+            {this.renderProjectBox(stock4, "SEC Stock Analysis", "SEC API, yFinance, Oracle Cloud", "https://github.com/yourusername/sec-analys
