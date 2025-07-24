@@ -7,39 +7,58 @@ class About extends React.Component {
     this.state = {
       skills: [
         {
-          id: "Python_skill",
-          content: "Python",
-          icon: "./img/python.jpg"
+          category: "Programming Languages",
+          items: [
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" }
+          ]
         },
         {
-          id: "css3",
-          content: "CSS3",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+          category: "Databases / Cloud",
+          items: [
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/snowflake/snowflake-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" }
+          ]
         },
         {
-          id: "javascript",
-          content: "JavaScript",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          category: "ELT / ETL",
+          items: [
+            { icon: "https://seeklogo.com/images/F/fivetran-logo-7B7F635E73-seeklogo.com.png" },
+            { icon: "https://upload.wikimedia.org/wikipedia/commons/7/75/Qlik_Logo.png" },
+            { icon: "https://www.vectorlogo.zone/logos/getdbtio/getdbtio-icon.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg" },
+            { icon: "https://cdn.worldvectorlogo.com/logos/databricks-icon.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" }
+          ]
         },
         {
-          id: "react",
-          content: "ReactJS",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+          category: "Orchestration",
+          items: [
+            { icon: "https://airflow.apache.org/images/airflow-logo.png" }
+          ]
         },
         {
-          id: "python",
-          content: "Python",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          category: "Data Visualization",
+          items: [
+            { icon: "https://cdn.worldvectorlogo.com/logos/power-bi-1.svg" },
+            { icon: "https://cdn.worldvectorlogo.com/logos/tableau-software.svg" },
+            { icon: "https://streamlit.io/images/brand/streamlit-logo-primary-colormark-darktext.png" }
+          ]
         },
         {
-          id: "php",
-          content: "PHP",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
-        },
-        {
-          id: "wordpress",
-          content: "Wordpress",
-          icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg"
+          category: "CI/CD & DevOps",
+          items: [
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg" },
+            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" }
+          ]
         }
       ],
       about_me: [
@@ -89,24 +108,31 @@ class About extends React.Component {
                     </div>
                     <div className="skill-mf">
                       {/* <p className="title-s">Skill</p> */}
-                      {this.state.skills.map(skill => {
-                        return (
-                          <React.Fragment key={skill.id}>
-                            <div
-                            className="d-flex align-items-center mb-3"
-                            key={skill.id}
-                            >
-                            <img
-                              src={skill.icon}
-                              alt={skill.content}
-                              title={skill.content}
-                              style={{ width: "30px", height: "30px", marginRight: "10px" }}
-                            />
-                            <span>{skill.content}</span>
+                      <p className="title-s">Tech Stack</p>
+                        {this.state.skills.map((group, index) => (
+                          <div key={index} style={{ marginBottom: "25px" }}>
+                            <h6 style={{ fontWeight: "bold", marginBottom: "10px" }}>{group.category}</h6>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
+                              {group.items.map((item, idx) => (
+                                <img
+                                  key={idx}
+                                  src={item.icon}
+                                  alt=""
+                                  title=""
+                                  style={{
+                                    width: "40px",
+                                    height: "40px",
+                                    objectFit: "contain",
+                                    borderRadius: "6px",
+                                    background: "#fff",
+                                    padding: "4px",
+                                    boxShadow: "0 1px 3px rgba(0,0,0,0.1)"
+                                  }}
+                                />
+                              ))}
+                            </div>
                           </div>
-                          </React.Fragment>
-                        );
-                      })}
+                        ))}
                     </div>
                   </div>
                   <div className="col-md-6">
