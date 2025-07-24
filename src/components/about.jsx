@@ -12,7 +12,6 @@ class About extends React.Component {
           items: [
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
-            { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
             { icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" }
           ]
         },
