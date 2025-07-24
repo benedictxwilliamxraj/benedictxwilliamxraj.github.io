@@ -95,7 +95,7 @@ class About extends React.Component {
             <p>It wasn’t glamorous. But it taught me a lot.</p>
 
             <p><strong>Now?</strong><br>
-            I study Business Analytics at the University at Buffalo. I’ve got 3+ years of experience as a Data Engineer. And I’ve built stuff that runs in the cloud, crunches millions of rows, and <em>helps real people make better decisions</em>.</p>
+            I completed my Master's in Business Analytics at the UB. I’ve got 3+ years of experience as a Data Engineer. And I’ve built stuff that runs in the cloud, crunches millions of rows, and <em>helps real people make better decisions</em>.</p>
 
             <h5>Here’s what I usually do:</h5>
             <ul>
