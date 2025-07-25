@@ -20,15 +20,18 @@ class Contact extends React.Component {
                         <h5 className="title-left">Send A Message</h5>
                       </div>
                       <div>
-                        <form
-                          action="https://formspree.io/xdoeonlo"
-                          method="POST"
-                          className="contactForm"
-                        >
+                        <form 
+                            action="https://formsubmit.co/benedictwraj117@gmail.com" 
+                            method="POST" 
+                            className="contactForm"
+                          >
+                          <input type="hidden" name="_captcha" value="false" />
+                          <input type="hidden" name="Thank You" value="https://yourportfolio.com/thanks" />
                           <div id="sendmessage">
                             Your message has been sent. Thank you!
                           </div>
                           <div id="errormessage"></div>
+                          
                           <div className="row">
                             <div className="col-md-12 mb-3">
                               <div className="form-group">
