@@ -109,28 +109,17 @@ class Contact extends React.Component {
                           <br />
                           Simply fill the from and send me an email.
                         </p>
-                        {/* <!-- <ul class="list-ico">
-                                <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li>
-                                <li><span class="ion-ios-telephone"></span> (617) 557-0089</li>
-                                <li><span class="ion-email"></span> contact@example.com</li>
-                                </ul> --> */}
+                        <ul class="list-ico">
+                                {/* <li><span class="ion-ios-location"></span> 329 WASHINGTON ST BOSTON, MA 02108</li> */}
+                                <li><span class="ion-ios-telephone"></span> +1 (716) 846-3192</li>
+                                <li><span class="ion-email"></span> benedictwraj117@gmail.com</li>
+                        </ul> 
                       </div>
                       <div className="socials">
                         <ul>
                           <li>
                             <a
-                              href=""
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <span className="ico-circle">
-                                <i className="ion-social-codepen"></i>
-                              </span>
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href=""
+                              href="https://github.com/benedictxwilliamxraj?tab=repositories"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
@@ -141,7 +130,7 @@ class Contact extends React.Component {
                           </li>
                           <li>
                             <a
-                              href=""
+                              href="https://www.linkedin.com/in/benedict-william-raj-96013b18b/"
                               target="_blank"
                               rel="noopener noreferrer"
                             >
